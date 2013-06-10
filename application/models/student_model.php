@@ -10,6 +10,7 @@ class Student_Model extends CI_Model {
 	{
 		// Call the Model constructor
 		parent::__construct();
+		
 	}
 
 	
@@ -21,6 +22,11 @@ class Student_Model extends CI_Model {
 		$query = $this->CI->db->insert("agreements",$data);
 		return $this->db->insert_id();
 	}	
+	
+	function addStudent($data){
+		$query = $this->db->insert("students",$data);
+		return $this->db->insert_id();
+	}
 	
 	function getUniversities(){
 		//$this->db->where('parentDirectory', $parentDirectory);
@@ -102,6 +108,13 @@ class Student_Model extends CI_Model {
 		return $query->result_array();
 	}
 	
+	function getAllStudents(){
+		$this->db->select("students.*");
+		
 	
+		
+		$query = $this->db->get("students");
+		return $query->result_array();		
+	}
 
 }

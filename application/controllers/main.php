@@ -36,6 +36,12 @@ class Main extends CI_Controller {
 		$this->smart->output("main.tpl");
 	}
 	
+	function tumOgrenciler(){
+		$this->smart->assign("students", $this->student_model->getAllStudents());
+		$this->smart->assign("center", $this->smart->fetch("student/displayall.tpl"));
+		$this->smart->output("main.tpl");
+	}
+	
 	function tumAnlasmalar(){
 		$this->smart->assign("agreements", $this->agreement->getAgreements());
 		$this->smart->assign("center", $this->smart->fetch("agreement/list.tpl"));
@@ -89,6 +95,28 @@ class Main extends CI_Controller {
 		
 		
 		$this->smart->assign("center", $this->smart->fetch("agreement/add.tpl"));
+		
+		$this->smart->output("main.tpl");	
+	}
+	
+	function ekleOgrenci(){
+		if($_POST):
+		$data = array(
+				'studentFirstName' => $this->input->post('studentFirstName'),
+				'studentMiddleName' => $this->input->post('studentMiddleName'),
+				'studentLastName' =>  $this->input->post('studentLastName'),
+				'studentPhone' =>  $this->input->post('studentPhone'),
+				'studentEmail' =>  $this->input->post('studentEmail'),
+				'studentType' =>  $this->input->post('studentType')
+		);
+		$this->student_model->addStudent($data);
+		
+		endif;
+		
+		
+		
+		
+		$this->smart->assign("center", $this->smart->fetch("student/add.tpl"));
 		
 		$this->smart->output("main.tpl");	
 	}
