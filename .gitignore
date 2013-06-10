@@ -214,4 +214,7 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
+#codeigniter
 application/cache/
+application/config/config.php
+application/libraries/smart.php
