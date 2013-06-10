@@ -25,6 +25,9 @@ class Main extends CI_Controller {
 	
 	public function index()
 	{
+		$this->smart->assign("lastaddstd", $this->document->getLastaddstd());
+		
+		
 		$this->smart->assign("budgets", $this->mobility_model->getBudgets());
 		$this->smart->assign("center", $this->smart->fetch("pages/dashboard.tpl"));
 		$this->smart->output("main.tpl");

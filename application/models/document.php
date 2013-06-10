@@ -24,5 +24,12 @@ class Document extends CI_Model {
 		return $query->result_array();		
 	}
 	
-
+function getLastaddstd(){
+		$this->db->select("lastaddstd.*");
+		
+	
+		
+		$query = $this->db->get("lastaddstd");
+		return $query->result_array();		
+	}
 }

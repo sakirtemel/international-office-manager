@@ -60,7 +60,7 @@
             <div class="box round">
                 <h2>
                     En son yapılan ödemeler</h2>
-                <div class="block">
+                <div class="block" >
                     <p class="start">
                     <ul>
                     		<li>Öğrenci 1(700EUR) - Mühendislik</li>
@@ -81,18 +81,12 @@
             <div class="box round">
                 <h2>
                     En son eklenen öğrenciler</h2>
-                <div class="block">
+                <div class="block" style="width:500px;height:200px;line-height:2em;overflow:scroll;padding:5px;">
                     <p class="start">
                     	<ul>
-                    		<li>Öğrenci 1 - Mühendislik</li>
-                    		<li>Öğrenci 2 - AEF</li>
-                    		<li>Öğrenci 3 - Fen Edebiyat</li>
-                    		<li>Öğrenci 4 - Güzel Sanatlar</li>
-                    		<li>Öğrenci 5 - İktisat</li>
-                    		<li>Öğrenci 6 - Mühendislik</li>
-                    		<li>Öğrenci 7 - Mühendislik</li>
-                    		<li>Öğrenci 8 - Güzel Sanatlar</li>
-                    		<li>Öğrenci 9 - Mühendislik</li>
+						{foreach from=$lastaddstd item=item}
+                    		<li>{$item.stdname} adlı öğrenci {$item.Time}'da eklendi</li>
+                    	{/foreach}
                     	</ul>    
                     </p>
                    
