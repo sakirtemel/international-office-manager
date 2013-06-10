@@ -53,17 +53,17 @@ class Student_Model extends CI_Model {
 		
 		if($departmentFilter!=0)
 		{
-		$this->db->like("owndepartments.departmentId", $departmentFilter);
+		$this->db->or_like("owndepartments.departmentId", $departmentFilter);
 		}
 		if($yearFilter!=0)
 		{
-		$this->db->like("years.yearCode", $yearFilter);
+		$this->db->or_like("years.yearCode", $yearFilter);
 		}
 
 		if($countryFilter !== 0)
 		{
 			
-		$this->db->like("countries.countryErasmusCode", $countryFilter);
+		$this->db->or_like("countries.countryErasmusCode", $countryFilter);
 		}
 		
 		

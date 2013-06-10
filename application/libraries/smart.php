@@ -13,7 +13,7 @@ class Smart extends Smarty
         $this->template_dir = $application_folder.'/views/default_theme/';
 //		$this->assign('BASE_URL',base_url());
 //		$this->assign('BASE_URL','http://cseclub.marmara.edu.tr/maraton/');
-		$this->assign('BASE_URL','http://localhost/erasmus/');
+		$this->assign('BASE_URL','http://localhost:81/erasmus/');
 		}
     function Output($tpl)
     {

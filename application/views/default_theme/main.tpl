@@ -117,8 +117,8 @@
                     <ul class="section menu">
                         <li><a class="menuitem">Öğrenciler</a>
                             <ul class="submenu">
-                                <li><a>Tüm Öğrenciler</a> </li>
-                                <li><a>Yeni Öğrenci Ekle</a> </li>
+                                <li><a href="{$BASE_URL}main/tumOgrenciler">Tüm Öğrenciler</a> </li>
+                                <li><a href="{$BASE_URL}main/ekleOgrenci">Yeni Öğrenci Ekle</a> </li>
                               
                             </ul>
                         </li>
