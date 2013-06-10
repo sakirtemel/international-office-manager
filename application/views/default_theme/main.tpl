@@ -96,14 +96,11 @@
                         <li><a href="table.html">Kabul Yazısı</a> </li>
                     </ul>
                 </li>
-                <li class="ic-form-style"><a href="{$BASE_URL}main/araOgrenci"><span>Öğrenciler</span></a></li>
+                <li class="ic-form-style"><a href="{$BASE_URL}main/araOgrenci"><span>Öğrenci Ara</span></a></li>
 				<li class="ic-charts"><a href="{$BASE_URL}main/istatistikler"><span>İstatistikler</span></a></li>
-                <li class="ic-grid-tables"><a href="{$BASE_URL}main/excel"><span>Excel</span></a></li>
-                <li class="ic-gallery dd"><a href="javascript:"><span>Üniversiteler</span></a>
-               		 <ul>
-                        <li><a href="image-gallery.html">Pretty Photo</a> </li>
-                        <li><a href="gallery-with-filter.html">Gallery with Filter</a> </li>
-                    </ul>
+                <li class="ic-grid-tables"><a href="{$BASE_URL}main/excel"><span>Öğrenci Hareketlilikleri</span></a></li>
+                <li class="ic-gallery dd"><a href="{$BASE_URL}main/tumUniversiteler"><span>Üniversiteler</span></a>
+               		 
                 </li>
                 <li class="ic-notifications"><a href="{$BASE_URL}main/log"><span>Sistem Logları</span></a></li>
 

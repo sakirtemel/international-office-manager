@@ -48,3 +48,7 @@
                 </div>
             </div>
         </div>
+		 <div class="box round first">
+		 <label>
+                    Dikkat: Burada yalnızca ERASMUS sisteminde hareketliliğe sahip öğrenciler hakkında arama yapılabilir!</label>
+		 </div>
