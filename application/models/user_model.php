@@ -10,6 +10,7 @@ class User_Model extends CI_Model {
 	{
 		// Call the Model constructor
 		parent::__construct();
+		
 	}
 
 	function login($username, $password){
@@ -32,5 +33,31 @@ class User_Model extends CI_Model {
 		return $query->result_array();	
 	}
 	
+	function addUser($data){
+	    
+			
+		$query = $this->db->insert("users",$data);
+		return $this->db->insert_id();
+	}
+	
+	function getUsers(){
+		$this->db->select("users.*");
+		
+	
+		
+		$query = $this->db->get("users");
+		return $query->result_array();		
+	}
+	
+	function updateUser($uname,$utype){
+	$data = array(
+               'usertype' => $utype
+               
+            );
+	$this->db->where('username', $uname);
+    $this->db->update('users', $data);
+
+	return $this->db->insert_id();		
+	}
 
 }

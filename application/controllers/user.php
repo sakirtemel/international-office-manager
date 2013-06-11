@@ -5,6 +5,7 @@ class User extends MY_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
+		$this->load->model("user_model");
 	}
 	
 	public function index()
@@ -38,6 +39,44 @@ class User extends MY_Controller {
 		else
 			$this->smart->assign("incorrect", "false");
 		$this->smart->output("login.tpl");
+	}
+	
+	function userControl(){
+	
+		
+		if($_POST):
+		$data = array(
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password'),
+				'email' =>  $this->input->post('email'),
+				'usertype' =>  $this->input->post('usertype')				
+				
+		);
+		$this->user_model->addUser($data);
+		
+		endif;
+		$this->smart->assign("users", $this->user_model->getUsers());
+		$this->smart->assign("center", $this->smart->fetch("user/adduser.tpl"));
+		$this->smart->output("main.tpl");
+	}
+	
+	function change(){
+	
+		
+		if($_POST):
+		
+		$un=$this->input->post('username');
+		$ut=$this->input->post('usertype');
+		
+	    				
+				
+		
+		$this->user_model->updateUser($un,$ut);
+		
+		endif;
+		$this->smart->assign("users", $this->user_model->getUsers());
+		$this->smart->assign("center", $this->smart->fetch("user/adduser.tpl"));
+		$this->smart->output("main.tpl");
 	}
 }
 

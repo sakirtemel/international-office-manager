@@ -21,6 +21,7 @@ class Main extends MY_Controller {
 		$this->load->model("student_model");
 		$this->load->model("document");
 		$this->load->model("agreement");
+		$this->load->model("user_model");
 	}
 	
 	public function index()

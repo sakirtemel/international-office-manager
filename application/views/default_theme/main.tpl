@@ -72,7 +72,7 @@
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
                             <li>Group 14</li>
-                            <li><a href="#">Ayarlar</a></li>
+                            <li><a href="{$BASE_URL}user/userControl">Ayarlar</a></li>
                             <li><a href="{$BASE_URL}user/logout">Çıkış</a></li>
                         </ul>
                         <br />

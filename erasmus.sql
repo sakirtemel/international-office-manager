@@ -9,7 +9,8 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
-
+CREATE DATABASE erasmus;
+USE erasmus;
 -- Dumping structure for table erasmus.agreements
 CREATE TABLE IF NOT EXISTS `agreements` (
   `agreementCode` char(25) NOT NULL DEFAULT '',
