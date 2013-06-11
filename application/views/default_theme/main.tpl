@@ -89,7 +89,7 @@
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="{$BASE_URL}"><span>Giriş Sayfası</span></a> </li>
                 <li class="ic-typography"><a href="javascript:"><span>Evrak İşleri</span></a>
-                    <ul>
+                    <ul>x
                         <li><a href="form-controls.html">Pasaport Yazısı</a> </li>
                         <li><a href="buttons.html">Vize Yazısı</a> </li>
                         <li><a href="form-controls.html">Sözleşme Formu</a> </li>
@@ -98,11 +98,15 @@
                 </li>
                 <li class="ic-form-style"><a href="{$BASE_URL}main/araOgrenci"><span>Öğrenci Ara</span></a></li>
 				<li class="ic-charts"><a href="{$BASE_URL}main/istatistikler"><span>İstatistikler</span></a></li>
+                {if $sess.usertype eq 'admin' || $sess.usertype eq 'moderator'}
                 <li class="ic-grid-tables"><a href="{$BASE_URL}main/excel"><span>Öğrenci Hareketlilikleri</span></a></li>
+                {/if}
                 <li class="ic-gallery dd"><a href="{$BASE_URL}main/tumUniversiteler"><span>Üniversiteler</span></a>
                		 
                 </li>
+                {if $sess.usertype eq 'admin'}
                 <li class="ic-notifications"><a href="{$BASE_URL}main/log"><span>Sistem Logları</span></a></li>
+                {/if}
 
             </ul>
         </div>

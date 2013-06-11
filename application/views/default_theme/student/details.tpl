@@ -1,4 +1,34 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		setupDialogBoxx('dialog', 'opener');
+	
 
+	        $("form.ajaxForm").submit(function() {
+
+	                var str = $(this).serialize();
+	                $.ajax({
+		                type: "POST",
+		                url: $(this).attr("action"),
+		                data: $(this).serialize(),
+		                error: function(msg){
+		                	alert("Hata olustur");
+			                },
+		                success: function(msg){
+		                         if(msg=="tamam"){
+		                        	 location.reload();
+			                     }
+		                         else{
+									alert("Hata olustu, lutfen bildiriniz : " + msg);
+				                     }
+		                        }
+		       		});
+	    			return false; 
+	    	});
+
+
+		});
+
+</script>
 <div class="grid_10">
             <div class="box round first">
                 <h2>
@@ -99,7 +129,7 @@
                             <td>
                                 <button class="btn btn-green">Düzenle</button>
                                 <button class="btn btn-orange">Hareketlilik Ekle</button>
-                                <button class="btn btn-blue">Mail Gönder</button>
+                                <button id="opener" class="btn btn-blue">Mail Gönder</button>
                             </td>
                         </tr>
                         
@@ -156,3 +186,21 @@
                 </div>
             </div>
         </div>
+        
+
+<div id="dialog" title="Mail Gonder" style="display:none;">
+<form class="ajaxForm" action="{$BASE_URL}email/sendEmail" method="POST">
+				<p>
+					Konu : <br/><input type="text" name="subject" size="40">
+				</p>
+				<p>
+					Icerik : <br/><textarea name="content" cols="70" rows="15"></textarea>
+				</p>
+				<p>
+					<input type="hidden" name="studentId" value="{$student.studentId}"/>
+					<input type="hidden" name="studentEmail" value="{$student.studentEmail}"/>
+					<button class="btn btn-green">Gönder</button>
+				</p>
+</form>
+                                </div>
+   

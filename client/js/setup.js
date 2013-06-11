@@ -462,6 +462,20 @@ function setupDialogBox(containerElement, associatedButton) {
         return false;
     });
 }
+function setupDialogBoxx(containerElement, associatedButton) {
+    $.fx.speeds._default = 1000;
+    $("#" + containerElement).dialog({
+        autoOpen: false,
+        show: "blind",
+        width: 600,
+        hide: "explode"
+    });
+
+    $("#" + associatedButton).click(function () {
+        $("#" + containerElement).dialog("open");
+        return false;
+    });
+}
 
 //setup accordion
 

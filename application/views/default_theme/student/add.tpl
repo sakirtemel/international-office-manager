@@ -51,7 +51,8 @@
                                     E-Posta Adresi</label>
                             </td>
                             <td>
-                                <input type="text" class="mini" name="studentEmail" />
+                                <input type="text" class="mini" name="studentEmail" id="studentEmail" style="float:left;"/>
+                                <div id="isEmail" style="color: red;float:left;"></div>
                             </td>
                         </tr>
                         
@@ -88,3 +89,21 @@
                 </div>
             </div>
         </div>
+{literal}
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$("#studentEmail").change(function(){
+				 var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				 isEmail = regex.test(this.value);
+				 if(!isEmail)
+					 $("#isEmail").text("gecerli bir email degil");
+				 else
+					 $("#isEmail").text("");
+				
+			
+		});	
+	});
+
+</script>
+{/literal}        
