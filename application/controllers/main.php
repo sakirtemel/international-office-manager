@@ -6,7 +6,7 @@ class Main extends CI_Controller {
 		parent::__construct();
 		
 		if ($this->session->userdata('user_id') == "") {
-			echo "You need to login.";
+			redirect('user/loginScreen');
 			die();
 		}
 		

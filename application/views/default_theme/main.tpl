@@ -73,7 +73,7 @@
                         <ul class="inline-ul floatleft">
                             <li>Group 14</li>
                             <li><a href="#">Ayarlar</a></li>
-                            <li><a href="#">Çıkış</a></li>
+                            <li><a href="{$BASE_URL}user/logout">Çıkış</a></li>
                         </ul>
                         <br />
                         <span class="small grey">Last Login: 3 hours ago</span>
